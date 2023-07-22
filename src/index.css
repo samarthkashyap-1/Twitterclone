@@ -1,6 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+.modal-box {
+  width: 100%;
+}
+
+@font-face {
+  font-family: Blackout;
+  src: url("fonts/chirp-extended-heavy-web.woff2") format("opentype");
+}
+@font-face {
+  font-family: Blackin;
+  src: url("fonts/chirp-heavy-web.woff") format("opentype");
+}

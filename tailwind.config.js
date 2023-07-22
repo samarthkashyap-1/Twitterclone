@@ -2,11 +2,20 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      backdropBrightness: {
+        25: ".25",
+        175: "1.75",
+      },
+    },
     fontFamily: {
-      twit: ["Libre Franklin", "sans - serif"],
+      twit: ["Blackout"],
+      twitnor: ["Blackin"],
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
+  daisyui: {
+    themes: ["light", "dark", "cupcake"],
+  },
 };
 

@@ -1,7 +1,11 @@
-import image from "./assets/twitter sign up.png";
-import apple from "./assets/icons8-apple.svg";
-import google from "./assets/icons8-google.svg";
-import logo from "./assets/icons8-twitterblack.svg";
+import image from "../assets/twitter sign up.png";
+import apple from "../assets/icons8-apple.svg";
+import google from "../assets/icons8-google.svg";
+import logo from "../assets/icons8-twitterblack.svg";
+
+
+import { Outlet, Link } from "react-router-dom";
+import Signin from "./Signin";
 
 function Signup() {
   const list = [
@@ -25,6 +29,7 @@ function Signup() {
   ];
 
   return (
+    <>
     <div className=" bg-[#000000]">
       <div className="flex">
         <div className="w-[54.5%] overflow-hidden">
@@ -45,12 +50,12 @@ function Signup() {
               <img src={logo} alt="" className="invert scale-90 opacity-80 " />
             </div>
             <div className="mt-1">
-              <h1 className="text-7xl font-bold text-white font-twit tracking-tight opacity-90 ">
+              <h1 className="text-6xl font-bold text-white font-twit tracking-tight opacity-90 ">
                 Happening now
               </h1>
             </div>
             <div>
-              <h1 className="text-4xl font-bold text-white font-twit tracking-tight opacity-90 ">
+              <h1 className="text-3xl font-bold text-white font-twit tracking-tight opacity-90 ">
                 Join Twitter today.
               </h1>
             </div>
@@ -79,12 +84,12 @@ function Signup() {
           <div className="mt-2 ml-9">
             <a href="">
               <div className="bg-[#1A8CD8] flex rounded-full w-[300px] h-10 justify-center hover:opacity-90  ">
-                <p className="font-bold text-md text-white my-auto font-twit">
+                <p className="font-bold text-md text-white my-auto font-twitnor">
                   Create Account
                 </p>
               </div>
             </a>
-            <p className="text-gray-500 text-xs mt-2 tracking-tight leading-3 font-twit">
+            <p className="text-gray-500 text-xs mt-2 tracking-tight leading-3 font-twitnor">
               By signing up, you agree to the{" "}
               <span className="text-[#1A8CD8] opacity-100 cursor-pointer hover:underline">
                 Terms of Service{" "}
@@ -102,37 +107,44 @@ function Signup() {
           </div>
 
           <div className="ml-9 mt-16">
-            <p className="text-white text-lg font-semibold font-twit">
+            <p className="text-white text-lg font-semibold font-twitnor">
               Already have an account?
             </p>
 
-            <a href="" className="">
-              <div className=" flex  rounded-full w-[300px] h-10 justify-center outline  outline-1 outline-gray-500  mt-4 bg-[#1A8CD8] bg-opacity-0 hover:bg-opacity-10 ">
-                <p className="font-bold text-md text-[#1A8CD8]   my-auto font-twit">
-                  Sign in
-                </p>
-              </div>
-            </a>
+            
+
+            <button
+              className="font-bold text-md text-[#1A8CD8] text-center  my-auto font-twitnor mt-4 rounded-full w-[300px] h-10 m-auto outline  outline-1 outline-gray-500   bg-[#1A8CD8] bg-opacity-0 hover:bg-opacity-10 "
+              onClick={() => window.mymodal3.showModal()}
+              >
+              Sign in
+            </button>
+              
           </div>
         </div>
       </div>
+      <Signin/>
+      
+
       <footer className="mt-2">
         <div className="h-16 ">
           <ul className="flex justify-evenly mx-12">
             {list.map((myList) => (
-              <li className="text-gray-500 text-[13px] mt-2 tracking-normal leading-3 font-twit cursor-pointer font-normal hover:underline ">
+              <li className="text-gray-500 text-[13px] mt-2 tracking-normal leading-3 font-twitnor cursor-pointer font-normal hover:underline ">
                 {myList}
               </li>
             ))}
           </ul>
           <div className="flex justify-center mt-2">
-            <p className=" text-gray-500 text-[13px] mt-1 tracking-normal leading-3 font-normal font-twit">
+            <p className=" text-gray-500 text-[13px] mt-1 tracking-normal leading-3 font-normal font-twitnor">
               © 2023 X Corp.
             </p>
           </div>
         </div>
       </footer>
     </div>
+    <Outlet/>
+    </>
   );
 }
 
