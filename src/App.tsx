@@ -3,8 +3,8 @@ import React from "react";
 // import App from './App.tsx'
 import "./index.css";
 import Signup from "./pages/Signup.tsx";
-import Signin from "./pages/Signin.tsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Feed from "./pages/Feed.tsx";
 
 function App() {
   return (
@@ -12,7 +12,8 @@ function App() {
       <Routes>
         
           <Route path="/" element={<Signup />} />
-          {/* <Route path="/login" element={<Signin />} /> */}
+          <Route path="/login" element={<Signup/>} />
+          <Route path="/user/:emailcheck" element={<Feed/>} />
         
         
       </Routes>

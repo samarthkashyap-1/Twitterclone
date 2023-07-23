@@ -15,3 +15,25 @@
   font-family: Blackin;
   src: url("fonts/chirp-heavy-web.woff") format("opentype");
 }
+
+#lab{
+  transition: 0.2s ;
+}
+
+#Forminput:placeholder-shown  ~ #lab{
+  
+  top: 12px;
+  font-size: 1.2rem;
+  margin-left: .75rem;
+  color: rgb(78, 93, 117);
+
+}
+
+#Forminput:focus~ #lab{
+  top: -2px;
+  margin-left: .75rem;
+  font-size: 13px;
+  color: rgb(59 130 246 )
+}
+
+
