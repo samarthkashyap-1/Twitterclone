@@ -12,7 +12,6 @@ import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 function Signup() {
   const [showModal, setshowModal] = useState(false);
   const location = useLocation();
-
   useEffect(() => {
     if (location.pathname === "/login") {
       setshowModal(true);
@@ -20,7 +19,6 @@ function Signup() {
       setshowModal(false);
     }
   }, [location]);
-
   // Rest of your component code...
   // You can use "showModal" state here to conditionally render your modal or do other actions.
 
