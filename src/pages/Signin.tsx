@@ -1,41 +1,32 @@
 import apple from "../assets/icons8-apple.svg";
 import google from "../assets/icons8-google.svg";
 import logo from "../assets/icons8-twitterblack.svg";
-import {Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
+  const Signinpass = ({ setshowModal, emailcheck }) => {
+  const [dull, setdull] = useState(true);
+  const [password, setpassword] = useState("");
+  const navigate = useNavigate();
 
-const Signinpass = ({ setshowModal, emailcheck }) => {
+  const handlepass = (e) => {
+    e.preventDefault();
+    if (e.target.value != null) {
+      setdull(false);
+    }
+    if (e.target.value == null) {
+      setdull(true);
+    }
 
-  const [dull,setdull] = useState(true)
-  const [password,setpassword] = useState("")
-  const navigate = useNavigate()
-
-const handlepass = (e) => {
-  e.preventDefault();
-  if (e.target.value!=null){
-    setdull(false)
-  }
-  if (e.target.value==null){
-    setdull(true)
-  }
-
-  setpassword(e.target.value)
-
-};
-
-const handlepassword= ()=>{
-  if(password){
-    navigate(`/user/${emailcheck}`);
-  }
-  else {
-    alert("enter pass")
-  }
-}
-
-
-
-
+    setpassword(e.target.value);
+  };
+  const handlepassword = () => {
+    if (password) {
+      navigate(`/user/${emailcheck}`);
+    } else {
+      alert("enter pass");
+    }
+  };
   return (
     <div>
       <div>
@@ -90,13 +81,16 @@ const handlepassword= ()=>{
           </div>
         </div>
         <div className="flex justify-center mt-36">
-          
-            <button className={
+          <button
+            className={
               dull
                 ? "bg-white h-12 text-black text-lg font-semibold font-twitnor w-3/4 p-2 rounded-full opacity-70"
                 : "bg-white h-12 text-black text-lg font-semibold font-twitnor w-3/4 p-2 rounded-full opacity-100"
-            } onClick={handlepassword}>Log in</button>
-        
+            }
+            onClick={handlepassword}
+          >
+            Log in
+          </button>
         </div>
       </div>
       <div className="flex ml-20 mt-5">
@@ -177,7 +171,6 @@ const Signinemail = ({ handleemail, setshowModal, checkmail }) => {
             >
               Phone, email, or username
             </label>
-            
           </div>
         </div>
         <div className="flex justify-center">
@@ -216,12 +209,11 @@ function Signin({ setshowModal }) {
     e.preventDefault();
     setemailcheck(e.target.value);
   };
- 
+
   const checkmail = () => {
     if (emailcheck) {
       setpass(true);
       setemail(false);
-      
     }
   };
 

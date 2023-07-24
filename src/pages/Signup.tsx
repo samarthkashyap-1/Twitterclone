@@ -2,7 +2,7 @@ import image from "../assets/twitter sign up.png";
 import apple from "../assets/icons8-apple.svg";
 import google from "../assets/icons8-google.svg";
 import logo from "../assets/icons8-twitterblack.svg";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 import { Outlet, Link } from "react-router-dom";
@@ -10,17 +10,13 @@ import Signin from "./Signin";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 
 function Signup() {
-  const [showModal,setshowModal] = useState(false);
-   const location = useLocation();
+  const [showModal, setshowModal] = useState(false);
+  const location = useLocation();
 
-  
   useEffect(() => {
-    
-    if (location.pathname === '/login') {
-     
+    if (location.pathname === "/login") {
       setshowModal(true);
     } else {
-      
       setshowModal(false);
     }
   }, [location]);
@@ -47,18 +43,15 @@ function Signup() {
     "Directory",
     "Settings",
   ];
-   const goToTop = () => {
-     window.scrollTo({
-       top: 0,
-       behavior: "smooth",
-     });
-   };
+  const goToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
+  showModal ? disableBodyScroll(<Signup />) : enableBodyScroll(<Signup />);
 
-   
-   showModal ? disableBodyScroll(<Signup/>): enableBodyScroll(<Signup/>)
-  
-  
   return (
     <div className="">
       {showModal && <Signin setshowModal={setshowModal} />}
@@ -149,16 +142,17 @@ function Signup() {
               <p className="text-white text-lg font-semibold font-twitnor">
                 Already have an account?
               </p>
-            <Link to="/login">
-
-              <button
-                className="font-bold text-md text-[#1A8CD8] text-center  my-auto font-twitnor mt-4 rounded-full w-[300px] h-10 m-auto outline  outline-1 outline-gray-500   bg-[#1A8CD8] bg-opacity-0 hover:bg-opacity-10 "
-                onClick={() => {setshowModal(true) 
-                  goToTop()}}
-                  >
-                Sign in
-              </button>
-                </Link>
+              <Link to="/login">
+                <button
+                  className="font-bold text-md text-[#1A8CD8] text-center  my-auto font-twitnor mt-4 rounded-full w-[300px] h-10 m-auto outline  outline-1 outline-gray-500   bg-[#1A8CD8] bg-opacity-0 hover:bg-opacity-10 "
+                  onClick={() => {
+                    setshowModal(true);
+                    goToTop();
+                  }}
+                >
+                  Sign in
+                </button>
+              </Link>
             </div>
           </div>
         </div>
