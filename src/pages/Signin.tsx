@@ -22,7 +22,9 @@ import { useState } from "react";
   };
   const handlepassword = () => {
     if (password) {
-      navigate(`/user/${emailcheck}`);
+      navigate('/');
+      alert("Please ")
+      
     } else {
       alert("enter pass");
     }

@@ -1,10 +1,40 @@
-import { useParams } from "react-router-dom"
+import { useEffect,useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 function Feed(){
-     const {emailcheck } = useParams();
+    const navigate = useNavigate()
+    const [userdata,setuserdata] =  useState({})
+    useEffect(()=>{
+        if(!localStorage.getItem("token")){
+            navigate("/");
+        }
+        else{
+            const gettingdata = JSON.parse(localStorage.getItem("userdata"))
+            setuserdata(gettingdata)
+        }
+        
+    },[])
+    console.log(userdata)
+    
+
+    const hanglelogout =()=>{
+        localStorage.removeItem('token');
+        localStorage.removeItem('userdata');
+        navigate('/')
+        setuserdata({})
+
+    }
+    
 
 return(
     <div>
-        <h1>Welcome {emailcheck}</h1>
+
+    <div>
+        <h1>Welcome{userdata.name}</h1>
+    </div>
+    <div>
+        <button onClick={hanglelogout} className="btn"> logout</button>
+    </div>
     </div>
 )
 
