@@ -14,7 +14,7 @@ function Feed(){
         }
         
     },[])
-    console.log(userdata)
+   
     
 
     const hanglelogout =()=>{
@@ -31,6 +31,9 @@ return(
 
     <div>
         <h1>Welcome{userdata.name}</h1>
+    </div>
+    <div>
+        <img src={userdata.picture} alt="" />
     </div>
     <div>
         <button onClick={hanglelogout} className="btn"> logout</button>

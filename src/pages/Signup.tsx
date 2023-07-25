@@ -1,10 +1,8 @@
 import image from "../assets/twitter sign up.png";
 import apple from "../assets/icons8-apple.svg";
-import google from "../assets/icons8-google.svg";
 import logo from "../assets/icons8-twitterblack.svg";
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate, Outlet, Link } from "react-router-dom";
-
 import Signin from "./Signin";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import {
@@ -12,9 +10,9 @@ import {
   googleLogout,
   GoogleLogin,
 } from "@react-oauth/google";
-
 import jwt_decode from "jwt-decode";
-import Feed from "./Feed";
+
+
 
 function Signup() {
   const [showModal, setshowModal] = useState(false);
@@ -49,6 +47,8 @@ function Signup() {
     "Directory",
     "Settings",
   ];
+
+
   const goToTop = () => {
     window.scrollTo({
       top: 0,
@@ -56,10 +56,17 @@ function Signup() {
     });
   };
 
+  const clientId = import.meta.env.VITE_REACT_APP_CLIENT_ID;
+  
+  
+  
+  
   const handlelogin = () => {
     googleLogout();
     setuser("");
   };
+
+
   showModal ? disableBodyScroll(<Signup />) : enableBodyScroll(<Signup />);
 
   
@@ -106,7 +113,7 @@ function Signup() {
                 </div>
 
                 <div className="flex flex-col mt-8 ml-9 gap-4">
-                  <GoogleOAuthProvider clientId="1004963031047-0u4jfdu9n904vgnqj93u812rdegu8dmv.apps.googleusercontent.com">
+                  <GoogleOAuthProvider clientId={clientId}>
                     <div className="bg-white cursor-crosshair flex rounded-full w-[300px] h-10 justify-center hover:opacity-90">
                       <GoogleLogin
                         onSuccess={(credentialResponse) => {
