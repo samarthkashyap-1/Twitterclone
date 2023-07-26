@@ -1,7 +1,7 @@
 import { useEffect,useState } from "react";
 import { useNavigate } from "react-router-dom";
-
-function Feed(){
+import Sidebar from "../components/Sidebar";
+function Home(){
     const navigate = useNavigate()
     const [userdata,setuserdata] =  useState({})
     useEffect(()=>{
@@ -17,7 +17,7 @@ function Feed(){
    
     
 
-    const hanglelogout =()=>{
+    const handlelogout =()=>{
         localStorage.removeItem('token');
         localStorage.removeItem('userdata');
         navigate('/')
@@ -27,19 +27,12 @@ function Feed(){
     
 
 return(
-    <div>
-
-    <div>
-        <h1>Welcome{userdata.name}</h1>
-    </div>
-    <div>
-        <img src={userdata.picture} alt="" />
-    </div>
-    <div>
-        <button onClick={hanglelogout} className="btn"> logout</button>
+    <div className=" bg-black flex">
+    <div className="flex ml-24"> 
+        <Sidebar userdata={userdata} handlelogout={handlelogout}/>
     </div>
     </div>
 )
 
 }
-export default Feed;
+export default Home;

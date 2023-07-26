@@ -10,6 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.1",
     "@react-oauth/google": "^0.11.1",
     "body-scroll-lock": "^4.0.0-beta.0",
     "daisyui": "^3.3.1",

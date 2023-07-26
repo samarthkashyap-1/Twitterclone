@@ -3,6 +3,12 @@ import google from "../assets/icons8-google.svg";
 import logo from "../assets/icons8-twitterblack.svg";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import jwt_decode from "jwt-decode";
+import {
+  GoogleOAuthProvider,
+  googleLogout,
+  GoogleLogin,
+} from "@react-oauth/google";
 
   const Signinpass = ({ setshowModal, emailcheck }) => {
   const [dull, setdull] = useState(true);
@@ -23,12 +29,14 @@ import { useState } from "react";
   const handlepassword = () => {
     if (password) {
       navigate('/');
-      alert("Please ")
+      alert("Please try Signin with Google ")
       
     } else {
       alert("enter pass");
     }
   };
+
+  
   return (
     <div>
       <div>
@@ -108,6 +116,8 @@ import { useState } from "react";
 };
 
 const Signinemail = ({ handleemail, setshowModal, checkmail }) => {
+  const clientId = import.meta.env.VITE_REACT_APP_CLIENT_ID;
+   const navigate = useNavigate();
   return (
     <>
       <div>
@@ -133,13 +143,27 @@ const Signinemail = ({ handleemail, setshowModal, checkmail }) => {
             Sign in to Twitter
           </h1>
         </div>
-        <div className="flex justify-center cursor-pointer">
-          <div className="bg-white flex rounded-full w-[300px] h-10 justify-center hover:opacity-90">
-            <img src={google} alt="" className="w-5 mr-1" />
-            <p className="font-bold  text-black text-sm my-auto">
-              Sign Up With Google
-            </p>
-          </div>
+        <div className="flex justify-center">
+          <GoogleOAuthProvider clientId={clientId}>
+            <div className="bg-white cursor-crosshair flex rounded-full w-[300px] h-10 justify-center hover:opacity-90">
+              <GoogleLogin
+                text="signin_with"
+                logo_alignment="center"
+                width="300px"
+                shape="pill"
+                onSuccess={(credentialResponse) => {
+                  const decoded = jwt_decode(credentialResponse.credential);
+                  localStorage.setItem("token", credentialResponse.credential);
+                  localStorage.setItem("userdata", JSON.stringify(decoded));
+
+                  navigate("/home");
+                }}
+                onError={() => {
+                  console.log("Login Failed");
+                }}
+              />
+            </div>
+          </GoogleOAuthProvider>
         </div>
         <div className="flex justify-center cursor-pointer">
           <div className="bg-white flex rounded-full w-[300px] h-10 justify-center hover:opacity-90">

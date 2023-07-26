@@ -2,7 +2,7 @@ import "./index.css";
 import Signup from "./pages/Signup.tsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NotFound from "./pages/NotFound.tsx";
-import Feed from "./pages/Feed.tsx";
+import Home from "./pages/Home.tsx";
 
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route  path="/" element={<Signup />} />
         <Route path="/login" element={<Signup />} />
-        <Route path="/feed" element={<Feed/>} />
+        <Route path="/home" element={<Home/>} />
         <Route path ='*' element={<NotFound/>} />
       </Routes>
     </BrowserRouter>
