@@ -7,7 +7,6 @@ import Signin from "./Signin";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import {
   GoogleOAuthProvider,
-  googleLogout,
   GoogleLogin,
 } from "@react-oauth/google";
 import jwt_decode from "jwt-decode";
@@ -61,10 +60,7 @@ function Signup() {
   
   
   
-  const handlelogin = () => {
-    googleLogout();
-    setuser("");
-  };
+  
 
 
   showModal ? disableBodyScroll(<Signup />) : enableBodyScroll(<Signup />);
@@ -195,7 +191,6 @@ function Signup() {
           </div>
 
           <footer className="mt-2">
-            <button onClick={() => handlelogin()}>logout</button>
             <div className="h-16 ">
               <ul className="flex justify-evenly mx-12">
                 {list.map((myList) => (
