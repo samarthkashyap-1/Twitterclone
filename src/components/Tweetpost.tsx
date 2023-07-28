@@ -3,7 +3,7 @@ import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 import SyncOutlinedIcon from "@mui/icons-material/SyncOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
-import AssessmentIcon from "@mui/icons-material/AssessmentOutlined";
+import InsertChartOutlinedIcon from "@mui/icons-material/InsertChartOutlined";
 import FileUploadOutlinedIcon from "@mui/icons-material/FileUploadOutlined";
 
  
@@ -84,7 +84,7 @@ const Tweetpost: React.FC<{ post: any}> = ({post}) =>{
             </div>
             <div className="flex justify-center group cursor-pointer">
               <div className="bg-[#1A8CD8] bg-opacity-0 group-hover:bg-opacity-20 rounded-full w-8 h-8 flex justify-center">
-                <AssessmentIcon className="text-gray-500 scale-90 group-hover:text-[#1A8CD8] mt-1" />
+                <InsertChartOutlinedIcon className="text-gray-500 scale-90 group-hover:text-[#1A8CD8] mt-1" />
               </div>
               <span className="text-gray-500 ml-2 mt-1 group-hover:text-[#1A8CD8]">
                 {post.viewed}

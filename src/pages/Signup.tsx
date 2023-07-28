@@ -52,8 +52,7 @@ const Signup: React.FC = () => {
   return (
     <div className="">
       <header className="fixed z-50 ">
-
-      {showModal && <Signin setshowModal={setshowModal} />}
+        {showModal && <Signin setshowModal={setshowModal} />}
       </header>
 
       <div>
@@ -94,9 +93,9 @@ const Signup: React.FC = () => {
 
               <div className="flex flex-col mt-8 ml-9 gap-4">
                 <GoogleOAuthProvider clientId={clientId}>
-                  <div className="bg-white cursor-crosshair flex rounded-full w-[300px] h-10 justify-center hover:opacity-90">
+                  <div className="w-[300px] hover:opacity-90">
                     <GoogleLogin
-                      text="signup_with"
+                      text="signin_with"
                       logo_alignment="center"
                       width="300px"
                       shape="pill"
@@ -106,10 +105,7 @@ const Signup: React.FC = () => {
                         );
                         const credential =
                           credentialResponse.credential as string;
-                        localStorage.setItem(
-                          "token",
-                        credential 
-                        );
+                        localStorage.setItem("token", credential);
                         localStorage.setItem(
                           "userdata",
                           JSON.stringify(decoded)
@@ -167,10 +163,7 @@ const Signup: React.FC = () => {
                   <button
                     className="font-bold text-md text-[#1A8CD8] text-center  my-auto font-twitnor mt-4 rounded-full w-[300px] h-10 m-auto outline  outline-1 outline-gray-500   bg-[#1A8CD8] bg-opacity-0 hover:bg-opacity-10 "
                     onClick={() => {
-                      
                       setshowModal(true);
-                      
-                      
                     }}
                   >
                     Sign in
