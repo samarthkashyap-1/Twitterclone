@@ -3,7 +3,7 @@ import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 import SyncOutlinedIcon from "@mui/icons-material/SyncOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
-import AssessmentIcon from "@mui/icons-material/Assessmentoutlined";
+import AssessmentIcon from "@mui/icons-material/AssessmentOutlined";
 import FileUploadOutlinedIcon from "@mui/icons-material/FileUploadOutlined";
 
  
