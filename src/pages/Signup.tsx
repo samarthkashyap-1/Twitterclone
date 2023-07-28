@@ -41,9 +41,7 @@ const Signup: React.FC = () => {
     "Directory",
     "Settings",
   ];
-
-
-  const clientId = import.meta.env.VITE_REACT_APP_CLIENT_ID;
+  
 
   const SignupModal: any= <Signup />;
 
@@ -92,7 +90,7 @@ const Signup: React.FC = () => {
               </div>
 
               <div className="flex flex-col mt-8 ml-9 gap-4">
-                <GoogleOAuthProvider clientId={clientId}>
+                <GoogleOAuthProvider clientId={import.meta.env.VITE_REACT_APP_CLIENT_ID}>
                   <div className="w-[300px] hover:opacity-90">
                     <GoogleLogin
                       text="signin_with"
