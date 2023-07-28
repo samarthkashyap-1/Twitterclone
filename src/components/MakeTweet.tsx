@@ -4,7 +4,7 @@ import BallotIcon from "@mui/icons-material/BallotOutlined";
 import EmojiEmotionsIcon from "@mui/icons-material/EmojiEmotionsOutlined";
 import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
-function MakeTweet({ userdata }) {
+const MakeTweet:React.FC<any>=({ userdata })=> {
   return (
     <div>
       <div className="w-[38rem] overflow-hidden">

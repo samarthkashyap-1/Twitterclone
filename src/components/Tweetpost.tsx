@@ -10,7 +10,7 @@ import FileUploadOutlinedIcon from "@mui/icons-material/FileUploadOutlined";
 const Tweetpost: React.FC<{ post: any}> = ({post}) =>{
     
   return (
-    <div className="flex w-[38rem] border-b-[1px] border-gray-600 mt-2">
+    <div className="flex w-[38rem] border-b-[1px] border-gray-600 mt-2 cursor-pointer">
       <div className="w-16 h-16 ">
         <img
           className="scale-90 p-2 text-white rounded-full"

@@ -1,7 +1,7 @@
 // import React from "react";
 
 
-function Sidebaroption ({Icon,text}){
+const Sidebaroption:React.FC<any> =({Icon,text})=>{
     return (
       <button >
 

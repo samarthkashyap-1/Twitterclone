@@ -5,15 +5,10 @@ import { useState, useEffect } from "react";
 import { useLocation, useNavigate, Outlet, Link } from "react-router-dom";
 import Signin from "./Signin";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
-import {
-  GoogleOAuthProvider,
-  GoogleLogin,
-} from "@react-oauth/google";
+import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
 import jwt_decode from "jwt-decode";
 
-
-
-function Signup() {
+const Signup: React.FC = () => {
   const [showModal, setshowModal] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
@@ -48,27 +43,18 @@ function Signup() {
   ];
 
 
-  const goToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
   const clientId = import.meta.env.VITE_REACT_APP_CLIENT_ID;
-  
-  
-  
-  
-  
 
+  const SignupModal: any= <Signup />;
 
-  showModal ? disableBodyScroll(<Signup />) : enableBodyScroll(<Signup />);
+  showModal ? disableBodyScroll(SignupModal) : enableBodyScroll(SignupModal);
 
-  
   return (
     <div className="">
+      <header className="fixed z-50 ">
+
       {showModal && <Signin setshowModal={setshowModal} />}
+      </header>
 
       <div>
         <div className=" bg-[#000000]">
@@ -111,16 +97,18 @@ function Signup() {
                   <div className="bg-white cursor-crosshair flex rounded-full w-[300px] h-10 justify-center hover:opacity-90">
                     <GoogleLogin
                       text="signup_with"
-                      logo_alignment ="center"
+                      logo_alignment="center"
                       width="300px"
                       shape="pill"
                       onSuccess={(credentialResponse) => {
                         const decoded = jwt_decode(
-                          credentialResponse.credential
+                          credentialResponse.credential as string
                         );
+                        const credential =
+                          credentialResponse.credential as string;
                         localStorage.setItem(
                           "token",
-                          credentialResponse.credential
+                        credential 
                         );
                         localStorage.setItem(
                           "userdata",
@@ -179,8 +167,10 @@ function Signup() {
                   <button
                     className="font-bold text-md text-[#1A8CD8] text-center  my-auto font-twitnor mt-4 rounded-full w-[300px] h-10 m-auto outline  outline-1 outline-gray-500   bg-[#1A8CD8] bg-opacity-0 hover:bg-opacity-10 "
                     onClick={() => {
+                      
                       setshowModal(true);
-                      goToTop();
+                      
+                      
                     }}
                   >
                     Sign in
@@ -211,6 +201,6 @@ function Signup() {
       </div>
     </div>
   );
-}
+};
 
 export default Signup;

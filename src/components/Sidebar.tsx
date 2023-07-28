@@ -11,7 +11,19 @@ import PermIdentityIcon from "@mui/icons-material/PermIdentityOutlined";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { Link } from "react-router-dom";
 
-function Sidebar ({userdata,handlelogout}){
+// interface UserData {
+//   name: string;
+//   age: number;
+//   email: string;
+//   picture: string;
+// }
+// interface SidebarProps {
+//   userdata: UserData;
+//   handlelogout: () => void;
+// }
+
+const Sidebar:React.FC<any>= ({userdata,handlelogout})=>{
+  console.log(userdata.picture)
     return (
       <div className=" sticky top-0">
         <div className="flex flex-col ml-10 gap-y-0.5 justify-start h-screen  z-50 border-r-[1px] border-gray-700">
@@ -48,14 +60,13 @@ function Sidebar ({userdata,handlelogout}){
           </div>
           {/* logo */}
 
-       <Link to='/home'>   <Sidebaroption Icon={HomeIcon} text={"Home"}  /></Link>
-         
-          <Sidebaroption
-            Icon={SearchIcon}
-            text={"Explore"}
-            
-            />
-            
+          <Link to="/home">
+            {" "}
+            <Sidebaroption Icon={HomeIcon} text={"Home"} />
+          </Link>
+
+          <Sidebaroption Icon={SearchIcon} text={"Explore"} />
+
           <Sidebaroption Icon={NotificationsIcon} text={"Notifications"} />
           <Sidebaroption Icon={ArticleIcon} text={"Lists"} />
           <Sidebaroption Icon={MailOutlineIcon} text={"Messages"} />
@@ -82,6 +93,7 @@ function Sidebar ({userdata,handlelogout}){
                 <img
                   className="scale-90 p-2 text-white rounded-full"
                   src={userdata.picture}
+                  
                 />
                 <div className="flex flex-col justify-evenly ">
                   <p className="text-[11px] h-5 font-twitnor text-left text-white">

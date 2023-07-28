@@ -1,21 +1,25 @@
 import apple from "../assets/icons8-apple.svg";
-import google from "../assets/icons8-google.svg";
+
 import logo from "../assets/icons8-twitterblack.svg";
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import React, { useState } from "react";
 import jwt_decode from "jwt-decode";
-import {
-  GoogleOAuthProvider,
-  googleLogout,
-  GoogleLogin,
-} from "@react-oauth/google";
+import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
 
-  const Signinpass = ({ setshowModal, emailcheck }) => {
+interface SigninpassProps {
+  setshowModal: (value: boolean) => void;
+  emailcheck: string;
+}
+
+const Signinpass: React.FC<SigninpassProps> = ({
+  setshowModal,
+  emailcheck,
+}) => {
   const [dull, setdull] = useState(true);
   const [password, setpassword] = useState("");
   const navigate = useNavigate();
 
-  const handlepass = (e) => {
+  const handlepass: React.ChangeEventHandler<any> = (e) => {
     e.preventDefault();
     if (e.target.value != null) {
       setdull(false);
@@ -28,15 +32,13 @@ import {
   };
   const handlepassword = () => {
     if (password) {
-      navigate('/');
-      alert("Please try Signin with Google ")
-      
+      navigate("/");
+      alert("Please try Signin with Google ");
     } else {
       alert("enter pass");
     }
   };
 
-  
   return (
     <div>
       <div>
@@ -115,12 +117,12 @@ import {
   );
 };
 
-const Signinemail = ({ handleemail, setshowModal, checkmail }) => {
+const Signinemail:React.FC<any> = ({ handleemail, setshowModal, checkmail }) => {
   const clientId = import.meta.env.VITE_REACT_APP_CLIENT_ID;
-   const navigate = useNavigate();
+  const navigate = useNavigate();
   return (
     <>
-      <div>
+      <div className="">
         <Link to="/">
           <button
             className="btn btn-sm text-white btn-circle btn-ghost absolute left-2 top-2"
@@ -152,8 +154,11 @@ const Signinemail = ({ handleemail, setshowModal, checkmail }) => {
                 width="300px"
                 shape="pill"
                 onSuccess={(credentialResponse) => {
-                  const decoded = jwt_decode(credentialResponse.credential);
-                  localStorage.setItem("token", credentialResponse.credential);
+                  const decoded = jwt_decode(
+                    credentialResponse.credential as string
+                  );
+                  const credential = credentialResponse.credential as string;
+                  localStorage.setItem("token", credential);
                   localStorage.setItem("userdata", JSON.stringify(decoded));
 
                   navigate("/home");
@@ -226,12 +231,12 @@ const Signinemail = ({ handleemail, setshowModal, checkmail }) => {
   );
 };
 
-function Signin({ setshowModal }) {
+const Signin:React.FC<any>=({ setshowModal })=> {
   const [pass, setpass] = useState(false);
   const [email, setemail] = useState(true);
 
   const [emailcheck, setemailcheck] = useState("");
-  const handleemail = (e) => {
+  const handleemail:React.ChangeEventHandler<any> = (e) => {
     e.preventDefault();
     setemailcheck(e.target.value);
   };

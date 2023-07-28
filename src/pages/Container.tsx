@@ -2,7 +2,6 @@ import { useEffect,useState } from "react";
 import { useNavigate,useLocation } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import Home from "../components/Home";
-import Explore from "../components/Explore";
 import Widgets from "../components/Widgets";
 function Container(){
     const navigate = useNavigate()
@@ -15,18 +14,14 @@ function Container(){
         }
        
         else{
-            const gettingdata = JSON.parse(localStorage.getItem("userdata"))
+            const gettingdata = JSON.parse(localStorage.getItem("userdata") as string)
             setuserdata(gettingdata)
         }
         
     },[whattoshow])
 
 
-    // const handleshow =(display)=>{
-    //     setwhattoshow(display)
-       
-
-    // }
+   
      useEffect(()=>{
         setwhattoshow(location.pathname)
      },[location])
@@ -50,7 +45,7 @@ return(
     <div>
 
         {whattoshow==="/home"&&<Home userdata={userdata}/>}
-        {/* {whattoshow==="/explore"&&<Explore/>} */}
+       
     </div>
     <div>
 
