@@ -147,7 +147,7 @@ const Signinemail:React.FC<any> = ({ handleemail, setshowModal, checkmail }) => 
         </div>
         <div className="flex justify-center">
           <GoogleOAuthProvider clientId={clientId}>
-            <div className="bg-white cursor-crosshair flex rounded-full w-[300px] h-10 justify-center hover:opacity-90">
+            <div className="w-[300px] hover:opacity-90">
               <GoogleLogin
                 text="signin_with"
                 logo_alignment="center"
