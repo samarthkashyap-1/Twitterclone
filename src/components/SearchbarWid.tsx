@@ -27,7 +27,7 @@ export default function SearchbarWid(){
             <input
               type="search"
               id="default-search"
-              className="block w-[22rem] placeholder:text-gray-500 box-border focus:outline-none focus:bg-black focus:ring-1 ring-blue-500 p-3 mt-1.5 pl-14 text-sm bg-[#202327] text-gray-900 placeholder:text-base rounded-full outline-blue-500  dark:placeholder-gray-400 dark:text-white  "
+              className="block w-full placeholder:text-gray-500 box-border focus:outline-none focus:bg-black focus:ring-1 ring-blue-500 p-3 mt-1.5 pl-14 text-sm bg-[#202327] text-gray-900 placeholder:text-base rounded-full outline-blue-500  dark:placeholder-gray-400 dark:text-white  "
               placeholder="Search Twitter"
               required
             />

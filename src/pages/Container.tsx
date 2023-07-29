@@ -3,6 +3,7 @@ import { useNavigate,useLocation } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import Home from "../components/Home";
 import Widgets from "../components/Widgets";
+import Explore from "../components/Explore";
 function Container(){
     const navigate = useNavigate()
     const location = useLocation()
@@ -45,11 +46,12 @@ return(
     <div>
 
         {whattoshow==="/home"&&<Home userdata={userdata}/>}
+        {whattoshow==="/explore"&&<Explore/>}
        
     </div>
     <div>
 
-        <Widgets/>
+        <Widgets whattoshow={whattoshow}/>
     </div>
     </div>
 )

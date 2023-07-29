@@ -62,18 +62,20 @@ const Sidebar:React.FC<any>= ({userdata,handlelogout})=>{
 
           <Link to="/home">
             {" "}
-            <Sidebaroption Icon={HomeIcon} text={"Home"} />
+            <Sidebaroption Icon={HomeIcon} text={"Home"} cursor={true}/>
           </Link>
 
-          <Sidebaroption Icon={SearchIcon} text={"Explore"} />
+          <Link to="/explore">
+            <Sidebaroption Icon={SearchIcon} text={"Explore"} cursor={true} />{" "}
+          </Link>
 
-          <Sidebaroption Icon={NotificationsIcon} text={"Notifications"} />
-          <Sidebaroption Icon={ArticleIcon} text={"Lists"} />
-          <Sidebaroption Icon={MailOutlineIcon} text={"Messages"} />
-          <Sidebaroption Icon={PeopleIcon} text={"Communities"} />
+          <Sidebaroption Icon={NotificationsIcon} text={"Notifications"} cursor={false} />
+          <Sidebaroption Icon={MailOutlineIcon} text={"Messages"} cursor={false} />
+          <Sidebaroption Icon={ArticleIcon} text={"Lists"} cursor={false} />
+          <Sidebaroption Icon={PeopleIcon} text={"Communities"}  cursor={false}/>
           <Sidebaroption Icon={VerifiedIcon} text={"Verified"} />
-          <Sidebaroption Icon={PermIdentityIcon} text={"Profile"} />
-          <Sidebaroption Icon={MoreHorizIcon} text={"More"} />
+          <Sidebaroption Icon={PermIdentityIcon} text={"Profile"} cursor={false} />
+          <Sidebaroption Icon={MoreHorizIcon} text={"More"} cursor={false} />
           {/* tweet-button */}
           <div className="mt-3">
             <button className="bg-[#1A8CD8] rounded-full font-twitnor font-semibold text-lg text-white w-56 h-12 hover:opacity-90">
@@ -93,7 +95,6 @@ const Sidebar:React.FC<any>= ({userdata,handlelogout})=>{
                 <img
                   className="scale-90 p-2 text-white rounded-full"
                   src={userdata.picture}
-                  
                 />
                 <div className="flex flex-col justify-evenly ">
                   <p className="text-[11px] h-5 font-twitnor text-left text-white">

@@ -93,7 +93,7 @@ const Signup: React.FC = () => {
                 <GoogleOAuthProvider clientId={import.meta.env.VITE_REACT_APP_CLIENT_ID}>
                   <div className="w-[300px] hover:opacity-90">
                     <GoogleLogin
-                      text="signin_with"
+                      text="signup_with"
                       logo_alignment="center"
                       width="300px"
                       shape="pill"
