@@ -8,7 +8,7 @@ export default function ExploreHeader(){
           <div className="w-full ml-5 mr-10">
             <SearchbarWid />
           </div>
-          <div className="rounded-full transition-all justify-center flex h-10 w-12 bg-gray-700 bg-opacity-0 hover:bg-opacity-30 mt-2 mr-2">
+          <div className="rounded-full transition-all cursor-pointer justify-center flex h-10 w-12 bg-gray-700 bg-opacity-0 hover:bg-opacity-30 mt-2 mr-2">
             <SettingsOutlinedIcon className="text-white mt-2 scale-90 " />
           </div>
         </div>
