@@ -12,7 +12,6 @@ export default function ExploreHeader(){
             <SettingsOutlinedIcon className="text-white mt-2 scale-90 " />
           </div>
         </div>
-
         <div className="mt-2">
           <div className="flex h-14 justify-around">
             <div className=" text-sm  w-full flex justify-center hover:bg-gray-900 transition-all cursor-pointer">
