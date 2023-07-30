@@ -4,6 +4,7 @@ import Sidebar from "../components/Sidebar";
 import Home from "../components/Home";
 import Widgets from "../components/Widgets";
 import Explore from "../components/Explore";
+import Profile from "../components/Profile";
 function Container(){
     const navigate = useNavigate()
     const location = useLocation()
@@ -47,6 +48,7 @@ return(
 
         {whattoshow==="/home"&&<Home userdata={userdata}/>}
         {whattoshow==="/explore"&&<Explore/>}
+        {whattoshow==="/profile"&&<Profile userdata={userdata}/>}
        
     </div>
     <div>

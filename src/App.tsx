@@ -17,6 +17,7 @@ function App() {
         <Route path="/login" element={<Signup />} />
         <Route path="/home" element={<Container/>} />
         <Route path="/explore" element={<Container/>} />
+        <Route path="/profile" element={<Container/>} />
         <Route path ='*' element={<NotFound/>} />
       </Routes>
 

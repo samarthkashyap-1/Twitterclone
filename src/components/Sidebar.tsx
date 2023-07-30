@@ -11,19 +11,9 @@ import PermIdentityIcon from "@mui/icons-material/PermIdentityOutlined";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { Link } from "react-router-dom";
 
-// interface UserData {
-//   name: string;
-//   age: number;
-//   email: string;
-//   picture: string;
-// }
-// interface SidebarProps {
-//   userdata: UserData;
-//   handlelogout: () => void;
-// }
+
 
 const Sidebar:React.FC<any>= ({userdata,handlelogout})=>{
-  console.log(userdata.picture)
     return (
       <div className=" sticky top-0">
         <div className="flex flex-col ml-10 gap-y-0.5 justify-start h-screen  z-50 border-r-[1px] border-gray-700">
@@ -62,19 +52,38 @@ const Sidebar:React.FC<any>= ({userdata,handlelogout})=>{
 
           <Link to="/home">
             {" "}
-            <Sidebaroption Icon={HomeIcon} text={"Home"} cursor={true}/>
+            <Sidebaroption Icon={HomeIcon} text={"Home"} cursor={true} />
           </Link>
 
           <Link to="/explore">
             <Sidebaroption Icon={SearchIcon} text={"Explore"} cursor={true} />{" "}
           </Link>
 
-          <Sidebaroption Icon={NotificationsIcon} text={"Notifications"} cursor={false} />
-          <Sidebaroption Icon={MailOutlineIcon} text={"Messages"} cursor={false} />
+          <Sidebaroption
+            Icon={NotificationsIcon}
+            text={"Notifications"}
+            cursor={false}
+          />
+          <Sidebaroption
+            Icon={MailOutlineIcon}
+            text={"Messages"}
+            cursor={false}
+          />
           <Sidebaroption Icon={ArticleIcon} text={"Lists"} cursor={false} />
-          <Sidebaroption Icon={PeopleIcon} text={"Communities"}  cursor={false}/>
+          <Sidebaroption
+            Icon={PeopleIcon}
+            text={"Communities"}
+            cursor={false}
+          />
           <Sidebaroption Icon={VerifiedIcon} text={"Verified"} />
-          <Sidebaroption Icon={PermIdentityIcon} text={"Profile"} cursor={false} />
+          <Link to="/profile">
+            {" "}
+            <Sidebaroption
+              Icon={PermIdentityIcon}
+              text={"Profile"}
+              cursor={true}
+            />
+          </Link>
           <Sidebaroption Icon={MoreHorizIcon} text={"More"} cursor={false} />
           {/* tweet-button */}
           <div className="mt-3">
