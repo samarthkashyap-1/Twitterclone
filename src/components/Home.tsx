@@ -182,7 +182,7 @@ const postsArray = [
 
 
   return (
-    <div className="">
+    <div className=" bg-black">
        <header className="sticky top-0 bg-black z-10 bg-opacity-70 backdrop-blur-md"><HomeHeader/></header> 
        <div className=" ">
 

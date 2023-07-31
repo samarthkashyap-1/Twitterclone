@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 
 const Sidebar:React.FC<any>= ({userdata,handlelogout})=>{
     return (
-      <div className=" sticky top-0">
+      <div className=" sticky top-0 sm:hidden">
         <div className="flex flex-col ml-10 gap-y-0.5 justify-start h-screen  z-50 border-r-[1px] border-gray-700">
           {/* logout dailog  */}
           <dialog id="my_modal_2" className="modal">

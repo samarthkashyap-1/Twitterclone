@@ -10,7 +10,7 @@ import FileUploadOutlinedIcon from "@mui/icons-material/FileUploadOutlined";
 const Tweetpost: React.FC<{ post: any}> = ({post}) =>{
     
   return (
-    <div className="flex w-[38rem] border-b-[1px] border-gray-600 mt-2 cursor-pointer">
+    <div className="flex w-[38rem] border-b-[1px] border-gray-600 mt-2 cursor-pointer ">
       <div className="w-16 h-16 ">
         <img
           className="scale-90 p-2 text-white rounded-full"
@@ -25,18 +25,15 @@ const Tweetpost: React.FC<{ post: any}> = ({post}) =>{
             {post.verify && (
               <VerifiedIcon className="text-[#1A8CD8] scale-75" />
             )}
-          <div>
-          <p className="text-gray-600 text-base font-medium">
-            {post.userhandle} - 2m
-          </p>
-
-          </div>
+            <div>
+              <p className="text-gray-600 text-base font-medium">
+                {post.userhandle} - 2m
+              </p>
+            </div>
           </div>
 
           <div className="mr-4">
-        
-              <MoreHorizIcon className="cursor-pointer  transition-all hover:text-[#1A8CD8] rounded-full bg-[#1A8CD8] bg-opacity-0 hover:bg-opacity-20 text-gray-600" />
-            
+            <MoreHorizIcon className="cursor-pointer  transition-all hover:text-[#1A8CD8] rounded-full bg-[#1A8CD8] bg-opacity-0 hover:bg-opacity-20 text-gray-600" />
           </div>
         </div>
         <div className="h-8">
@@ -49,9 +46,9 @@ const Tweetpost: React.FC<{ post: any}> = ({post}) =>{
           <div>
             <p className="text-[#1A8CD8]">{post?.link}</p>
           </div>
-          <div className=" mt-3">
+          <div className=" mt-3 sm:flex sm:justify-center">
             <img
-              className="rounded-xl h-[30rem] w-[32rem]"
+              className="rounded-xl h-[30rem] w-[32rem] sm:w-[30rem] sm:h-[28rem]"
               src={post.img}
               alt=""
             />

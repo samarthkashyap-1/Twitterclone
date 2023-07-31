@@ -41,7 +41,7 @@ function Container(){
 
 return(
     <div className=" bg-black flex">
-    <div className="ml-20"> 
+    <div className="ml-20 sm:ml-0"> 
         <Sidebar userdata={userdata} handlelogout={handlelogout}  />
     </div>
     <div>

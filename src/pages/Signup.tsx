@@ -48,7 +48,8 @@ const Signup: React.FC = () => {
   showModal ? disableBodyScroll(SignupModal) : enableBodyScroll(SignupModal);
 
   return (
-    <div className="">
+    <div className=" bg-[#000000]">
+      {/* <Signin setshowModal={setshowModal} className ="xl:hidden"/> */}
       <header className="fixed z-50 ">
         {showModal && <Signin setshowModal={setshowModal} />}
       </header>
@@ -56,7 +57,7 @@ const Signup: React.FC = () => {
       <div>
         <div className=" bg-[#000000]">
           <div className="flex">
-            <div className="w-[54.5%] overflow-hidden">
+            <div className="w-[54.5%] overflow-hidden sm:hidden">
               <img
                 src={image}
                 alt=""
@@ -68,7 +69,7 @@ const Signup: React.FC = () => {
                 className="absolute w-56 top-60 left-80 invert scale-150"
               />
             </div>
-            <div className="mb-12">
+            <div className="mb-12 sm:mb-0 sm:h-screen">
               <div className="flex flex-col gap-14 mt-8 ml-9 ">
                 <div className="">
                   <img
@@ -78,19 +79,21 @@ const Signup: React.FC = () => {
                   />
                 </div>
                 <div className="mt-1">
-                  <h1 className="text-6xl font-bold text-white font-twit tracking-tight opacity-90 ">
+                  <h1 className="text-6xl font-bold text-white font-twit tracking-tight opacity-90 sm:text-5xl ">
                     Happening now
                   </h1>
                 </div>
                 <div>
-                  <h1 className="text-3xl font-bold text-white font-twit tracking-tight opacity-90 ">
+                  <h1 className="text-3xl font-bold text-white font-twit sm:text-2xl tracking-tight opacity-90 ">
                     Join Twitter today.
                   </h1>
                 </div>
               </div>
 
               <div className="flex flex-col mt-8 ml-9 gap-4">
-                <GoogleOAuthProvider clientId={import.meta.env.VITE_REACT_APP_CLIENT_ID}>
+                <GoogleOAuthProvider
+                  clientId={import.meta.env.VITE_REACT_APP_CLIENT_ID}
+                >
                   <div className="w-[300px] hover:opacity-90">
                     <GoogleLogin
                       text="signup_with"
@@ -171,9 +174,9 @@ const Signup: React.FC = () => {
             </div>
           </div>
 
-          <footer className="mt-2">
+          <footer className="mt-2 sm:hidden ">
             <div className="h-16 ">
-              <ul className="flex justify-evenly mx-12">
+              <ul className="flex justify-evenly mx-12 sm:mx-0">
                 {list.map((myList) => (
                   <li className="text-gray-500 text-[13px] mt-2 tracking-normal leading-3 font-twitnor cursor-pointer font-normal hover:underline ">
                     {myList}

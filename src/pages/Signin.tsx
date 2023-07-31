@@ -125,7 +125,7 @@ const Signinemail:React.FC<any> = ({ handleemail, setshowModal, checkmail }) => 
       <div className="">
         <Link to="/">
           <button
-            className="btn btn-sm text-white btn-circle btn-ghost absolute left-2 top-2"
+            className="btn btn-sm text-white btn-circle btn-ghost absolute sm:scale-125 sm:top-3 sm:left-3 left-2 top-2"
             onClick={() => setshowModal(false)}
           >
             ✕
@@ -139,7 +139,7 @@ const Signinemail:React.FC<any> = ({ handleemail, setshowModal, checkmail }) => 
           alt=""
         />
       </div>
-      <div className="flex flex-col gap-6 ">
+      <div className="flex flex-col gap-6  ">
         <div className="flex justify-center mt-20">
           <h1 className="font-twitnor text-3xl text-white opacity-90 font-bold">
             Sign in to Twitter
@@ -250,7 +250,7 @@ const Signin:React.FC<any>=({ setshowModal })=> {
 
   return (
     <div className="h-screen absolute z-10 bg-[#242D34] w-screen bg-opacity-60">
-      <div className="h-[640px] w-[580px] bg-black top-10 left-[30%] relative rounded-xl text-white">
+      <div className="h-[640px] w-[580px] bg-black top-10 left-[30%] relative rounded-xl text-white sm:w-screen sm:h-screen sm:top-0 sm:rounded-none sm:left-0 ">
         {pass && (
           <Signinpass setshowModal={setshowModal} emailcheck={emailcheck} />
         )}
