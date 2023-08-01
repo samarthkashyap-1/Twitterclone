@@ -14,7 +14,7 @@ const Widgets:React.FC<any> = ({whattoshow})=> {
     "more...",
   ];
   return (
-    <div className=" fixed border-l-[1px] border-gray-700 h-screen w-1/4">
+    <div className=" fixed border-l-[1px] sm:hidden border-gray-700 h-screen w-1/4">
       <div className="flex justify-center flex-col ml-7 gap-5">
         {whattoshow != "/explore" && <SearchbarWid />}
         <div className="mt-2">

@@ -183,8 +183,8 @@ const postsArray = [
 
   return (
     <div className=" bg-black">
-       <header className="sticky top-0 bg-black z-10 bg-opacity-70 backdrop-blur-md"><HomeHeader/></header> 
-       <div className=" ">
+       <header className="sticky top-0 bg-black z-10 bg-opacity-70 backdrop-blur-md"><HomeHeader userdata={userdata}/></header> 
+       <div className=" overflow-x-hidden">
 
       <MakeTweet userdata={userdata}/>
      {postsArray.map((post)=>(

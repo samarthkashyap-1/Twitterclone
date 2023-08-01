@@ -10,45 +10,47 @@ import FileUploadOutlinedIcon from "@mui/icons-material/FileUploadOutlined";
 const Tweetpost: React.FC<{ post: any}> = ({post}) =>{
     
   return (
-    <div className="flex w-[38rem] border-b-[1px] border-gray-600 mt-2 cursor-pointer ">
+    <div className="flex w-[38rem] sm:w-screen border-b-[1px] border-gray-600 mt-2 cursor-pointer w-">
       <div className="w-16 h-16 ">
         <img
-          className="scale-90 p-2 text-white rounded-full"
+          className="scale-90 sm:scale-75 p-2 text-white rounded-full"
           src={post.logo}
           alt=""
         />
       </div>
       <div className="flex flex-col">
-        <div className="flex mt-1 gap-1 justify-between h-6 w-[34rem]">
+        <div className="flex mt-1 gap-1 justify-between h-6 w-[34rem] sm:w-[20rem]">
           <div className="flex">
-            <p className="text-white text-base  font-medium ">{post.name}</p>
+            <p className="text-white text-base sm:text-sm font-medium ">
+              {post.name}
+            </p>
             {post.verify && (
               <VerifiedIcon className="text-[#1A8CD8] scale-75" />
             )}
             <div>
-              <p className="text-gray-600 text-base font-medium">
+              <p className="text-gray-600 sm:text-sm text-base font-medium sm:ml-2">
                 {post.userhandle} - 2m
               </p>
             </div>
           </div>
 
-          <div className="mr-4">
+          <div className="mr-4 sm:mr-0">
             <MoreHorizIcon className="cursor-pointer  transition-all hover:text-[#1A8CD8] rounded-full bg-[#1A8CD8] bg-opacity-0 hover:bg-opacity-20 text-gray-600" />
           </div>
         </div>
-        <div className="h-8">
-          <h3 className="text-white">
+        <div className="h-8 sm:w-3/4">
+          <h3 className="text-white sm:text-sm ">
             {post.caption}
             <span className="text-[#1A8CD8]"></span>
           </h3>
         </div>
         <div>
-          <div>
-            <p className="text-[#1A8CD8]">{post?.link}</p>
+          <div className="sm:mt-2">
+            <p className="text-[#1A8CD8] sm:text-sm">{post?.link}</p>
           </div>
           <div className=" mt-3 sm:flex sm:justify-center">
             <img
-              className="rounded-xl h-[30rem] w-[32rem] sm:w-[30rem] sm:h-[28rem]"
+              className="rounded-xl h-[30rem] w-[32rem] sm:w-[20rem] sm:h-[16rem]"
               src={post.img}
               alt=""
             />

@@ -5,6 +5,7 @@ import Home from "../components/Home";
 import Widgets from "../components/Widgets";
 import Explore from "../components/Explore";
 import Profile from "../components/Profile";
+import MobileNav from "../components/MobileNav";
 function Container(){
     const navigate = useNavigate()
     const location = useLocation()
@@ -40,11 +41,12 @@ function Container(){
     
 
 return(
+    <>
     <div className=" bg-black flex">
     <div className="ml-20 sm:ml-0"> 
         <Sidebar userdata={userdata} handlelogout={handlelogout}  />
     </div>
-    <div>
+    <div className="sm:w-screen">
 
         {whattoshow==="/home"&&<Home userdata={userdata}/>}
         {whattoshow==="/explore"&&<Explore/>}
@@ -56,6 +58,10 @@ return(
         <Widgets whattoshow={whattoshow}/>
     </div>
     </div>
+    <footer className="hidden sm:block fixed bottom-0">
+        <MobileNav/>
+    </footer>
+    </>
 )
 
 }

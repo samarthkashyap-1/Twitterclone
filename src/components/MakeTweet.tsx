@@ -7,7 +7,7 @@ import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 const MakeTweet:React.FC<any>=({ userdata })=> {
   return (
     <div>
-      <div className="w-[38rem] overflow-hidden ">
+      <div className="w-[38rem] overflow-hidden sm:hidden">
         <div className="border-b-[1px] border-gray-700">
           <div className="flex justify-start cursor-pointer bg-opacity-0 mt-0.5 h-14">
             <img
