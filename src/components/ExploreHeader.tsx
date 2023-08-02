@@ -1,6 +1,7 @@
 import React from "react";
 import SearchbarWid from "./SearchbarWid"
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
+import { Link } from "react-router-dom";
 
 const  ExploreHeader:React.FC<any>= ({userdata})=>{
     return (
@@ -8,11 +9,14 @@ const  ExploreHeader:React.FC<any>= ({userdata})=>{
         <div className="flex h-12 justify-between">
           <div className="w-full sm:flex ml-5  sm:ml-0 mr-10">
             <div className=" hidden sm:block sm:p-2  ml-1">
+              <Link to="/profile">
+
               <img
                 src={userdata.picture}
                 className="w-8 h-8 sm:block hidden  rounded-full "
                 alt=""
-              />
+                />
+                </Link>
             </div>
             <SearchbarWid />
           </div>

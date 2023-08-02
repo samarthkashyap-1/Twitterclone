@@ -1,13 +1,17 @@
+import { Link } from "react-router-dom";
 const HomeHeader:React.FC<any>=({userdata})=>{
     return (
       <div className="border-y-[1px] w-[38rem] sm:w-screen border-gray-700 bg-transparent">
         <div className="text-white">
           <div className="h-12 p-3  sm:flex sm:p-2  ml-1">
+            <Link to="/profile">
+
             <img
               src={userdata.picture}
               className="w-8 h-8  sm:block hidden item-start rounded-full"
               alt=""
-            />
+              />
+              </Link>
             <h1 className="text-white text-xl opacity-90 font-twitnor sm:ml-[34%] font-semibold">
               Home
             </h1>
