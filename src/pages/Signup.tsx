@@ -19,8 +19,12 @@ const Signup: React.FC = () => {
       setshowModal(false);
     }
   }, [location]);
-  // Rest of your component code...
-  // You can use "showModal" state here to conditionally render your modal or do other actions.
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      navigate("/home")
+    }
+  }, [location]);
+ 
 
   const list = [
     "About",
@@ -49,7 +53,7 @@ const Signup: React.FC = () => {
 
   return (
     <div className=" bg-[#000000]">
-      {/* <Signin setshowModal={setshowModal} className ="xl:hidden"/> */}
+    
       <header className="fixed z-50 ">
         {showModal && <Signin setshowModal={setshowModal} />}
       </header>

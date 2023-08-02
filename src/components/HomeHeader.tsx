@@ -3,8 +3,7 @@ const HomeHeader:React.FC<any>=({userdata})=>{
       <div className="border-y-[1px] w-[38rem] sm:w-screen border-gray-700 bg-transparent">
         <div className="text-white">
           <div className="h-12 p-3  sm:flex sm:p-2  ml-1">
-            <img src={userdata.picture} className="w-8 h-8  sm:block hidden item-start rounded-full " alt="" />
-            
+            <img src={userdata.picture} className="w-8 h-8  sm:block hidden item-start rounded-full " alt="" />     
             <h1 className="text-white text-xl opacity-90 font-twitnor sm:ml-[34%] font-semibold">
               Home
             </h1>
