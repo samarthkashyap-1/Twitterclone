@@ -1,11 +1,19 @@
+import React from "react";
 import SearchbarWid from "./SearchbarWid"
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 
-export default function ExploreHeader(){
+const  ExploreHeader:React.FC<any>= ({userdata})=>{
     return (
-      <div className="border-y-[1px] w-[38rem] border-gray-700 bg-transparent">
+      <div className="border-y-[1px] w-[38rem] sm:w-screen border-gray-700 bg-transparent">
         <div className="flex h-12 justify-between">
-          <div className="w-full ml-5 mr-10">
+          <div className="w-full sm:flex ml-5  sm:ml-0 mr-10">
+            <div className=" hidden sm:block sm:p-2  ml-1">
+              <img
+                src={userdata.picture}
+                className="w-8 h-8 sm:block hidden  rounded-full "
+                alt=""
+              />
+            </div>
             <SearchbarWid />
           </div>
           <div className="rounded-full transition-all cursor-pointer justify-center flex h-10 w-12 bg-gray-700 bg-opacity-0 hover:bg-opacity-30 mt-2 mr-2">
@@ -13,7 +21,7 @@ export default function ExploreHeader(){
           </div>
         </div>
         <div className="mt-2">
-          <div className="flex h-14 justify-around">
+          <div className="flex h-14 justify-around sm:justify-between">
             <div className=" text-sm  w-full flex justify-center hover:bg-gray-900 transition-all cursor-pointer">
               <button className="font-bold border-b-4 text-white border-[#1A8CD8]">
                 For you
@@ -44,3 +52,4 @@ export default function ExploreHeader(){
       </div>
     );
 }
+export default ExploreHeader;

@@ -49,8 +49,8 @@ return(
     <div className="sm:w-screen">
 
         {whattoshow==="/home"&&<Home userdata={userdata}/>}
-        {whattoshow==="/explore"&&<Explore/>}
-        {whattoshow==="/profile"&&<Profile userdata={userdata}/>}
+        {whattoshow==="/explore"&&<Explore userdata={userdata}/>}
+        {whattoshow==="/profile"&&<Profile userdata={userdata} handlelogout={handlelogout}/>}
        
     </div>
     <div>

@@ -1,10 +1,10 @@
 import ProfileHeader from "./ProfileHeader";
 import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
-const Profile: React.FC<any> = ({ userdata }) => {
+const Profile: React.FC<any> = ({ userdata,handlelogout }) => {
   return (
-    <div className="w-[38rem]">
+    <div className="w-[38rem] sm:w-screen overflow-hidden">
       <header className="sticky top-0 z-50 bg-black bg-opacity-50 backdrop-blur-lg">
-        <ProfileHeader userdata={userdata} />
+        <ProfileHeader userdata={userdata} handlelogout={handlelogout} />
       </header>
       <div>
         <div className="bg-[#333639] h-48"></div>
@@ -73,7 +73,7 @@ const Profile: React.FC<any> = ({ userdata }) => {
         </div>
       </div>
 
-      <div className="flex items-center justify-center h-screen">
+      <div className="flex items-center sm:h-[32rem] justify-center h-screen">
         <p className="text-gray-500">
             No Tweets Yet
         </p>

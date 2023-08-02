@@ -2,7 +2,7 @@ import ExploreHeader from "./ExploreHeader";
 import Trendingdata from "./Trendingdata";
 import Tweetpost from "./Tweetpost";
 
-function Explore(){
+const Explore:React.FC<any>=({userdata})=>{
 
     const postsArray = [
        {
@@ -100,7 +100,7 @@ function Explore(){
     return (
       <div>
         <header className="sticky top-0 bg-black z-10 bg-opacity-70 backdrop-blur-md">
-          <ExploreHeader />
+          <ExploreHeader userdata={userdata} />
         </header>
         <div className="">
           <Trendingdata
