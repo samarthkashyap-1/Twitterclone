@@ -5,13 +5,12 @@ const HomeHeader:React.FC<any>=({userdata})=>{
         <div className="text-white">
           <div className="h-12 p-3  sm:flex sm:p-2  ml-1">
             <Link to="/profile">
-
-            <img
-              src={userdata.picture}
-              className="w-8 h-8  sm:block hidden item-start rounded-full"
-              alt=""
+              <img
+                src={userdata.picture}
+                className="w-8 h-8  sm:block hidden  border-2 border-gray-800  item-start rounded-full"
+                alt=""
               />
-              </Link>
+            </Link>
             <h1 className="text-white text-xl opacity-90 font-twitnor sm:ml-[34%] font-semibold">
               Home
             </h1>

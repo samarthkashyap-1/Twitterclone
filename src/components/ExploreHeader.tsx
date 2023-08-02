@@ -13,7 +13,7 @@ const  ExploreHeader:React.FC<any>= ({userdata})=>{
 
               <img
                 src={userdata.picture}
-                className="w-8 h-8 sm:block hidden  rounded-full "
+                className="w-8 h-8 sm:block hidden border-2 border-gray-800  rounded-full "
                 alt=""
                 />
                 </Link>

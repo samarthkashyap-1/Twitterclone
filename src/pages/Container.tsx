@@ -58,7 +58,7 @@ return(
         <Widgets whattoshow={whattoshow}/>
     </div>
     </div>
-    <footer className="hidden sm:block fixed bottom-0">
+    <footer className="hidden sm:block fixed -bottom-1">
         <MobileNav/>
     </footer>
     </>
